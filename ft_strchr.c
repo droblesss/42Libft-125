@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 19:02:20 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/20 18:37:17 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/22 18:26:23 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
