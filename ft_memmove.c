@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 19:02:20 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/28 15:12:43 by drobles          ###   ########.fr       */
+/*   Created: 2022/06/28 14:20:55 by drobles           #+#    #+#             */
+/*   Updated: 2022/06/28 19:18:21 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
+	unsigned char	*aux1;
+	unsigned char	*aux2;
+	size_t			i;
 
 	i = 0;
-	while (s[i] != c)
+	aux1 = (unsigned char *)dst;
+	aux2 = (unsigned char *)src;
+	if (aux1 > aux2)
 	{
-		if (!s[i])
-			return (NULL);
-		i++;
+		while (len--)
+			aux1[len] = aux2[len];
 	}
-	return ((char *)&s[i]);
+	else if (aux1 < aux2)
+	{
+		while (i < len)
+		{
+			aux1[i] = aux2[i];
+			i++;
+		}
+	}
+	return (dst);
 }
-/*int main(void)
-{
-	printf("%s",strchr("hola", 'h'));
-	printf("%s", ft_strchr("hola", 'h'));
-			return (0);
-			}*/

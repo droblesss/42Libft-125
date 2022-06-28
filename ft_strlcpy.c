@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 16:39:43 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/22 18:09:29 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/28 14:03:27 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,9 @@ int	ft_strlen(const char *str)
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	char *aux;
-	size_t i;
-	size_t srcsize;
-	
+	char	*aux;
+	size_t	i;
+	size_t	srcsize;
 
 	srcsize = ft_strlen(src);
 	i = 0;
@@ -40,13 +39,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	if (dstsize > 0)
 	{
 		while (aux[i] && i < dstsize - 1)
-	{
-		dst[i] = aux[i];
-		i++;
-	}
+		{
+			dst[i] = aux[i];
+			i++;
+		}
 		dst[i] = '\0';
 	}
-	return(srcsize);
+	return (srcsize);
 }
 /*int main(void)
 {
@@ -56,10 +55,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	printf("%lu", strlcpy(s1, s2, 3));
 	return (0);
 	}*/
-
-
-
-
-
-
-

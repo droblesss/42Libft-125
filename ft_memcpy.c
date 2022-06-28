@@ -6,11 +6,10 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:11:56 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/20 17:48:50 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/28 19:11:32 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
@@ -27,6 +26,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		d[i] = c[i];
 		i++;
 	}
+	return (d);
 }
 /*int	main(void)
 {

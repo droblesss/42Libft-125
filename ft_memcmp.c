@@ -6,12 +6,13 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 12:05:51 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/22 13:30:53 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/28 15:09:23 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
