@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 18:11:56 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/29 16:49:33 by drobles          ###   ########.fr       */
+/*   Created: 2022/06/29 13:41:19 by drobles           #+#    #+#             */
+/*   Updated: 2022/06/29 16:51:20 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strdup(const char	*s1)
 {
-	unsigned int	i;
-	const char		*c;
-	char			*d;
+	char	*aux;
+	size_t	i;
 
-	c = src;
-	d = dst;
 	i = 0;
-	while (i < n)
+	aux = ft_calloc (sizeof(char *), ft_strlen(s1));
+	while (s1[i])
 	{
-		d[i] = c[i];
+		aux[i] = s1[i];
 		i++;
 	}
-	return (d);
+	return (aux);
 }
-/*int	main(void)
+/*int main(void)
 {
-	char s1[] = "hola";
-	char s2[] = "dios";
+	printf("%s", ft_strdup("lorem ipsum dolor sit amet"));
 	return (0);
-}*/
+	}*/

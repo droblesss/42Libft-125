@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:17:54 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/28 18:45:46 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/29 16:51:55 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <string.h>
+# include <stdlib.h>
 
 int		ft_isalpha(int src);
 void	ft_bzero(void	*s, size_t	n);
@@ -37,5 +38,7 @@ int		ft_memcmp(const void	*s1, const void	*s2, size_t	n);
 char	*ft_strnstr(const char	*haystack, const char	*needle, size_t	len);
 int		ft_atoi(const char	*str);
 void	*ft_memmove(void	*dst, const void	*src, size_t len);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char	*s1);
 
 #endif

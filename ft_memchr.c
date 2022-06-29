@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:20:05 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/22 13:33:00 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/29 15:55:53 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 }
 /*int main(void)
 {
-	printf("%s", memchr("holaquetal", 'q', 2));
-	printf("%s", ft_memchr("holaquetal", 'q', 2));
+	printf("%s", memchr("holaquetal", 'q', 10));
+	printf("%s", ft_memchr("holaquetal", 'q', 10));
 			return (0);
 			}*/
