@@ -6,11 +6,12 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:59:38 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/20 17:30:58 by drobles          ###   ########.fr       */
+/*   Updated: 2022/06/30 20:25:37 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isalnum(char str)
+int	ft_isalnum(int str)
 {
 	if ((str > 96 && str < 123) || (str > 64 && str < 91)
 		|| (str > 47 && str < 58))
