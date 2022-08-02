@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 17:57:20 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/04 18:37:40 by drobles          ###   ########.fr       */
+/*   Created: 2022/08/02 13:52:50 by drobles           #+#    #+#             */
+/*   Updated: 2022/08/02 13:57:54 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	if (s != NULL)
-	{
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-	}
+    if (lst)
+    {
+        del(lst->content);
+        free(lst);
+        lst = NULL;
+    }
 }
-/*int main(void)
-{
-	printf("%s", ft_putstr_fd("hola", fd));
-	return (0);
-}*/

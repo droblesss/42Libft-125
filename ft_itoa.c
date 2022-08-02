@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 14:20:55 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/05 15:45:51 by drobles          ###   ########.fr       */
+/*   Created: 2022/07/05 10:59:13 by drobles           #+#    #+#             */
+/*   Updated: 2022/07/05 13:56:58 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_itoa(int n)
 {
-	unsigned char	*aux1;
-	unsigned char	*aux2;
-	size_t			i;
+	char	*string;
+	int		i;
+	int		aux;
 
+	aux = n;
 	i = 0;
-	aux1 = (unsigned char *)dst;
-	aux2 = (unsigned char *)src;
-	if (aux1 > aux2)
+	while (aux > 0)
 	{
-		while (len--)
-			aux1[len] = aux2[len];
+		aux /= 10;
+		i++;
 	}
-	else if (aux1 < aux2)
+	string = ft_calloc((sizeof(char) * i + 1), 1);
+	while (n > 0)
 	{
-		while (i < len)
-		{
-			aux1[i] = aux2[i];
-			i++;
-		}
+		string[i - 1] = (n % 10) + 48;
+		n /= 10;
+		i--;
 	}
-	return (dst);
+	return (string);
 }
+
+/*int main(void):wq
+ *
+{
+    printf("%s", ft_itoa(-4565456));
+    return 0;
+}*/	

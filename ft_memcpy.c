@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:11:56 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/29 16:49:33 by drobles          ###   ########.fr       */
+/*   Updated: 2022/07/04 16:16:22 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,20 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	c = src;
 	d = dst;
 	i = 0;
+	if (c == NULL && d == NULL)
+		return (NULL);
 	while (i < n)
-	{
-		d[i] = c[i];
-		i++;
-	}
+		{
+			d[i] = c[i];
+			i++;
+		}
 	return (d);
 }
 /*int	main(void)
 {
-	char s1[] = "hola";
-	char s2[] = "dios";
+	char s1[] = "";
+	char s2[] = "ho";
+	printf("%s\n", ft_memcpy(s1, s2, 3));
+	printf("%s", memcpy(s1, s2, 3));
 	return (0);
 }*/

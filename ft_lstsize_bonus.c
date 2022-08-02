@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 17:57:20 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/04 18:37:40 by drobles          ###   ########.fr       */
+/*   Created: 2022/08/02 13:11:14 by drobles           #+#    #+#             */
+/*   Updated: 2022/08/02 13:11:15 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int ft_lstsize(t_list *lst)
 {
-	size_t	i;
+    int contador;
 
-	i = 0;
-	if (s != NULL)
-	{
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-	}
+    contador = 0;
+    while (lst != NULL)
+    {
+        lst = lst->next;
+        contador++;
+    }
+    return (contador);
 }
-/*int main(void)
-{
-	printf("%s", ft_putstr_fd("hola", fd));
-	return (0);
-}*/

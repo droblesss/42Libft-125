@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strim.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 13:41:19 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/22 17:29:29 by drobles          ###   ########.fr       */
+/*   Created: 2022/07/20 15:19:59 by drobles           #+#    #+#             */
+/*   Updated: 2022/07/20 18:14:06 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char	*s1)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*aux;
-	size_t	i;
+	size_t		size_s;
+	char		*nueva;
+	size_t		i;
 
 	i = 0;
-	aux = ft_calloc (sizeof(char) * ft_strlen(s1) + 1, 1);
-	if (aux == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	while (s1[i])
-	{
-		aux[i] = s1[i];
-		i++;
-	}
-	return (aux);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	size_s = ft_strlen(s1);
+	while (size_s && ft_strrchr(set, s1[size_s]))
+		size_s--;
+	nueva = ft_substr((char*)s1, 0, size_s + 1);
+	return (nueva);
 }
 /*int main(void)
 {
-	printf("%s", ft_strdup("lorem ipsum dolor sit amet"));
+	const char s1[] = "EEEEEfrsta";
+	const char set[] = "Eftiri\0a";
+	printf("%s", ft_strtrim(s1, set));
 	return (0);
 	}*/

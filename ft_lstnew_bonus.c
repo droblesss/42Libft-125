@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 14:20:55 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/05 15:45:51 by drobles          ###   ########.fr       */
+/*   Created: 2022/08/02 10:52:13 by drobles           #+#    #+#             */
+/*   Updated: 2022/08/02 11:12:30 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*aux1;
-	unsigned char	*aux2;
-	size_t			i;
-
-	i = 0;
-	aux1 = (unsigned char *)dst;
-	aux2 = (unsigned char *)src;
-	if (aux1 > aux2)
+	t_list	*nodo;
+	nodo = (t_list *) malloc(sizeof(t_list));
+	if (nodo != NULL)
 	{
-		while (len--)
-			aux1[len] = aux2[len];
+		nodo -> content = (void *)content;
+		nodo -> next = NULL;
 	}
-	else if (aux1 < aux2)
-	{
-		while (i < len)
-		{
-			aux1[i] = aux2[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (nodo);
 }

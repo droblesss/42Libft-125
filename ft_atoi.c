@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:14:26 by drobles           #+#    #+#             */
-/*   Updated: 2022/06/30 20:08:51 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/02 11:48:04 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 #include <stdlib.h>
 #include "libft.h"
 
-int	overnum(long long int c)
+/*int	overnum(long long c, int sign)
 {
-	if (c >= 9223372036854775807)
+	if ( sign == 0 && c >= 9223372036854775807)
 		return (-1);
-	else if (c <= -9223372036854775807)
+	else if (sign == 1 && c >= 9223372036854775807)
 		return (0);
 	return (c);
-}
+}*/
 
 int	ft_atoi(const char *str)
 {
-	long long int		c;
-	long long int		sign;
-	long long int		numero;
+	int		c;
+	int		sign;
+	size_t 	numero;
 
 	c = 0;
-	sign = 0;
+	sign = 1;
 	numero = 0;
 	while (str[c] == '\t' || str[c] == '\n' || str[c] == '\f'
 		|| str[c] == '\r' || str[c] == ' ' || str[c] == '\v')
@@ -39,23 +39,24 @@ int	ft_atoi(const char *str)
 	if (str[c] == '-' || str[c] == '+')
 	{
 		if (str[c] == '-')
-			sign++;
+			sign *= -1;
 		c++;
 	}
 	while (str[c] > 47 && str[c] < 58)
 	{
-		numero = numero * 10 + str[c] - 48;
+		numero = numero * 10 + (str[c] - 48);
 		c++;
 	}
-	if (sign % 2 != 0)
-		numero = numero * -1;
-	numero = overnum(numero);
-	return (numero);
+	if (numero > 9223372036854775807 && sign == 1)
+		return (-1);
+	else if (numero > 9223372036854775807 && sign == -1)
+		return (0);
+	return (numero * sign);
 }
-int	main(void)
+/*it	main(void)
 {
-	char *s1 = " 99999999999999999999999999";
-	printf("%d\n", ft_atoi(s1));
-	printf("%d\n", atoi(s1));
+	char *s1 = "-999999999999999999999999999";
+	printf("ft %d\n", ft_atoi(s1));
+	printf("a %d\n", atoi(s1));
 	return (0);
-}
+}*/

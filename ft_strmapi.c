@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 14:20:55 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/05 15:45:51 by drobles          ###   ########.fr       */
+/*   Created: 2022/07/20 16:15:58 by drobles           #+#    #+#             */
+/*   Updated: 2022/07/20 18:16:34 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 {
-	unsigned char	*aux1;
-	unsigned char	*aux2;
-	size_t			i;
+	
+	char	*final;
+	size_t	i;
 
+	if (!s)
+		return (NULL);
+	final = malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (final == NULL)
+		return (NULL);
 	i = 0;
-	aux1 = (unsigned char *)dst;
-	aux2 = (unsigned char *)src;
-	if (aux1 > aux2)
+	while (s[i])
 	{
-		while (len--)
-			aux1[len] = aux2[len];
+		final[i] = (*f)(i, s[i]);
+		i++;
 	}
-	else if (aux1 < aux2)
-	{
-		while (i < len)
-		{
-			aux1[i] = aux2[i];
-			i++;
-		}
-	}
-	return (dst);
+	final[i] = '\0';
+	return (final);
 }
+/*int main (void)
+{
+	printf("%s", ft_strmapi("hola", 
+*/
+

@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/28 14:20:55 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/05 15:45:51 by drobles          ###   ########.fr       */
+/*   Created: 2022/07/20 18:03:00 by drobles           #+#    #+#             */
+/*   Updated: 2022/07/20 18:03:29 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned char	*aux1;
-	unsigned char	*aux2;
-	size_t			i;
-
-	i = 0;
-	aux1 = (unsigned char *)dst;
-	aux2 = (unsigned char *)src;
-	if (aux1 > aux2)
-	{
-		while (len--)
-			aux1[len] = aux2[len];
-	}
-	else if (aux1 < aux2)
-	{
-		while (i < len)
-		{
-			aux1[i] = aux2[i];
-			i++;
-		}
-	}
-	return (dst);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
