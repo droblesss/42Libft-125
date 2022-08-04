@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 10:52:13 by drobles           #+#    #+#             */
-/*   Updated: 2022/08/02 11:12:30 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 12:41:50 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*nodo;
+
 	nodo = (t_list *) malloc(sizeof(t_list));
 	if (nodo != NULL)
 	{
-		nodo -> content = (void *)content;
-		nodo -> next = NULL;
+		nodo->content = (void *)content;
+		nodo->next = NULL;
 	}
 	return (nodo);
 }

@@ -6,15 +6,14 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 16:15:58 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/20 18:16:34 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 13:01:01 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
-{
-	
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{	
 	char	*final;
 	size_t	i;
 
@@ -36,4 +35,3 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char))
 {
 	printf("%s", ft_strmapi("hola", 
 */
-

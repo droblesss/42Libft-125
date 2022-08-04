@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 19:14:26 by drobles           #+#    #+#             */
-/*   Updated: 2022/08/02 11:48:04 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 11:57:30 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,12 @@ int	ft_atoi(const char *str)
 {
 	int		c;
 	int		sign;
-	size_t 	numero;
+	size_t	numero;
 
 	c = 0;
 	sign = 1;
 	numero = 0;
-	while (str[c] == '\t' || str[c] == '\n' || str[c] == '\f'
-		|| str[c] == '\r' || str[c] == ' ' || str[c] == '\v')
+	while (str[c] == 32 || (str[c] >= 9 && str[c] <= 13))
 			c++;
 	if (str[c] == '-' || str[c] == '+')
 	{
@@ -53,7 +52,7 @@ int	ft_atoi(const char *str)
 		return (0);
 	return (numero * sign);
 }
-/*it	main(void)
+/*int main(void)
 {
 	char *s1 = "-999999999999999999999999999";
 	printf("ft %d\n", ft_atoi(s1));

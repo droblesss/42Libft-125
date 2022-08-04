@@ -5,9 +5,15 @@ FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c\
 	   ft_atoi.c ft_calloc.c ft_strdup.c ft_memcpy.c\
 	   ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_putchar_fd.c\
 	   ft_putstr_fd.c ft_putnbr_fd.c ft_substr.c ft_strjoin.c\
-	   ft_itoa.c ft_putendl_fd.c ft_strmapi.c
+	   ft_itoa.c ft_putendl_fd.c ft_strmapi.c ft_strtrim.c ft_split.c\
+	   ft_striteri.c\
+
+BONUS_FILES = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c\
+				ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstmap_bonus.c\
 
 OBJS = $(FILES:.c=.o)
+
+OBJBONUS = $(BONUS_FILES:.c=.o)
 
 Cflags = -Wall -Wextra -Werror #Flags necesarias para compilar, habrá que ponerlas si no respeta el comp
 
@@ -28,10 +34,18 @@ $(OBJS): $(FILES) $(LIB)
 	gcc $(Cflags) -c $(FILES) 
 
 clean:
-	rm  -f $(OBJS) 
+	rm  -f $(OBJS) $(OBJBONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
+bonus: $(OBJBONUS) $(LIB)
+	ar rc $(NAME) $(OBJBONUS)
+	ranlib $(NAME)
+
+$(OBJBONUS): $(BONUS_FILES) $(LIB)
+	gcc $(Cflgas) -c $(BONUS_FILES)
+
+.PHONY: all clean fclean re bonus

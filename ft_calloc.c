@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 13:39:12 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/21 17:22:41 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 17:57:36 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
+	if (count == SIZE_MAX || size == SIZE_MAX)
+		return (NULL);
 	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (ptr);

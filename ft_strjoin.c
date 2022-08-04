@@ -6,42 +6,42 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 15:39:14 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/21 12:28:45 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 13:13:17 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-    while (dest[i] != 0)
-    {
-        i++;
-    }
-    while (src[j] != 0)
-    {
-        dest[i + j] = src[j];
-        j++;
-    }
-    dest [i + j] = '\0';
-    return (dest);
+	i = 0;
+	j = 0;
+	while (dest[i] != 0)
+	{
+		i++;
+	}
+	while (src[j] != 0)
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+	dest [i + j] = '\0';
+	return (dest);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *aux1;
-	char *aux2;
-	char *con;
-	size_t i;
-	size_t j;
+	char	*aux1;
+	char	*aux2;
+	char	*con;
+	size_t	i;
+	size_t	j;
 
 	if (!s1)
-	   return (NULL);	
+		return (NULL);
 	i = 0;
 	j = ft_strlen(s1) + ft_strlen(s2);
 	aux1 = (char *)s1;
@@ -55,7 +55,7 @@ char *ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	ft_strcat(con, aux2);
-	return(con);
+	return (con);
 }
 /*int main(void)
 {

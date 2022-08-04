@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:19:59 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/20 18:14:06 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 16:29:56 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_s = ft_strlen(s1);
 	while (size_s && ft_strrchr(set, s1[size_s]))
 		size_s--;
-	nueva = ft_substr((char*)s1, 0, size_s + 1);
+	nueva = ft_substr((char *)s1, 0, size_s + 1);
 	return (nueva);
 }
 /*int main(void)

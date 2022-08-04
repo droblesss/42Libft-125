@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:33:33 by drobles           #+#    #+#             */
-/*   Updated: 2022/07/22 17:29:58 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 19:55:34 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,27 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	slen = ft_strlen(s);
-	sub = (char*) malloc (sizeof(*s) * (len + 1));
+	if (start > slen)
+		return (ft_strdup(""));
+	if (len > slen)
+		len = slen;
+	sub = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
-	if (start >= slen)
-		return (sub);
-	while (len)
+	while (j < len)
 	{
 		sub[j] = s[start];
 			j++;
 			start++;
-			len--;
 	}
 	sub[j] = '\0';
 	return (sub);
 }
 /*int main(void)
 {
-	char s1[] = "gigantesco";
-	printf ("%s", ft_substr(s1, 50, 5));
+	char s1[] = "lorem ipsum dolor sit amet";
+	printf ("%s", ft_substr(s1, 400, 20));
+	printf("%s", substr(s1, 5, 5));
+
 	return(0);
 }*/
