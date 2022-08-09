@@ -6,13 +6,13 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:59:13 by drobles           #+#    #+#             */
-/*   Updated: 2022/08/04 16:00:26 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/05 11:11:32 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	longitud(long aux)
+static int	longitud(long aux)
 {
 	int		i;
 
@@ -30,7 +30,7 @@ int	longitud(long aux)
 	return (i);
 }
 
-void	*mayorque(char *string, size_t n_long, int i)
+static void	*mayorque(char *string, size_t n_long, int i)
 {
 	while (n_long > 0)
 	{
