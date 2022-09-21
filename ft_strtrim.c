@@ -6,7 +6,7 @@
 /*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 15:19:59 by drobles           #+#    #+#             */
-/*   Updated: 2022/08/05 14:28:13 by drobles          ###   ########.fr       */
+/*   Updated: 2022/08/03 16:29:56 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	nueva = ft_substr((char *)s1, 0, size_s + 1);
 	return (nueva);
 }
-int main(void)
+/*int main(void)
 {
 	const char s1[] = "EEEEEfrsta";
 	const char set[] = "Eftiri\0a";
 	printf("%s", ft_strtrim(s1, set));
 	return (0);
-	}
+	}*/
